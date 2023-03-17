@@ -1,0 +1,41 @@
+.box{
+    width: 200px;
+    /* height: 150px;  para usar el aling-items: stretch*/
+    height: 200px;
+    border: 1px solid gray;
+    background-color: rgb(122, 181, 235);
+    font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.flex-container{
+    margin-bottom: 20px;
+    display: flex;
+    border: 1px solid red;
+    /*flex-direction: column;*/
+   flex-direction: row;
+   /* flex-direction: row-reverse; */
+   /* flex-direction: column-reverse; */
+   flex-wrap: wrap;
+}
+
+.flex-container2{
+    margin-bottom: 20px;
+    display: flex;
+    border: 1px solid red;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* justify-content: right; */
+    /* justify-content: space-around; */
+    /* justify-content: space-between; */
+    justify-content: space-evenly;
+    height: 500px;
+    /* align-items: start; */
+    /* align-items: stretch; */
+   /*  align-items: end; */
+    align-items: center;
+}
