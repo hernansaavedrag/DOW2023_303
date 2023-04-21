@@ -45,7 +45,7 @@
                                         <input type="password" id="password" class="form-control">
                                     </div>
                                     <div class="mb-3 text-end">
-                                        <a href="index.html" class="btn btn-success">Iniciar Sesión</a>
+                                        <a href="{{route('home.index')}}" class="btn btn-success">Iniciar Sesión</a>
                                     </div>
                                 </form>
                             </div>

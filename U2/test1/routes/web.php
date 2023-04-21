@@ -18,9 +18,9 @@ use App\Http\Controllers\EquipoController;
 //    return view('welcome');
 //});
 
-Route::get('/',[HomeController::class,'index']);
-Route::get('/login',[HomeController::class,'login']);
+Route::get('/',[HomeController::class,'index'])->name('home.index');
+Route::get('/login',[HomeController::class,'login'])->name('home.login');
 
-Route::get('/equipos',[EquipoController::class,'index']);
+Route::get('/equipos',[EquipoController::class,'index'])->name('equipos.index');
 
 
