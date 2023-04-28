@@ -14,7 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create('equipos', function (Blueprint $table) {
-            $table->id();
+            //$table->id(); // esto hace un campo demasiado grande ---bigINT -> INTEGER
+            $table->unsignedInteger('id')->autoIncrement();
             $table->string('nombre',50);
             $table->string('entrenador',50);
             $table->timestamps();
