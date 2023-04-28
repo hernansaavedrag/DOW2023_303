@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-04-2023 a las 17:44:40
+-- Tiempo de generación: 28-04-2023 a las 16:01:21
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 8.0.11
 
@@ -30,7 +30,7 @@ USE `dow303_futbol`;
 --
 
 CREATE TABLE `equipos` (
-  `id` bigint(20) UNSIGNED NOT NULL,
+  `id` int(10) UNSIGNED NOT NULL,
   `nombre` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `entrenador` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -42,9 +42,13 @@ CREATE TABLE `equipos` (
 --
 
 INSERT INTO `equipos` (`id`, `nombre`, `entrenador`, `created_at`, `updated_at`) VALUES
-(1, 'Colo Colo', 'Pelligrini', '2023-04-26 14:53:24', '2023-04-26 14:53:24'),
-(2, 'Manchester City', 'Guardiola', '2023-04-26 14:53:56', '2023-04-26 14:53:56'),
-(3, 'Huachipato', 'Boric', '2023-04-26 19:41:26', '2023-04-26 19:41:26');
+(7, 'Colo Colo', 'Gustavo Quinteros', '2023-04-28 13:46:51', NULL),
+(8, 'Universidad Católica', 'Cristian Paolucci', '2023-04-28 13:46:51', NULL),
+(9, 'Manchester City', 'Pep Guardiola', '2023-04-28 13:46:51', NULL),
+(10, 'Bacerlona', 'Xavi Hernández', '2023-04-28 13:46:51', NULL),
+(11, 'Real Madrid', 'Carlo Ancelotti', '2023-04-28 13:46:51', NULL),
+(12, 'Paris Saint Germain', 'Christophe Galtier', '2023-04-28 13:46:51', NULL),
+(13, 'Everton', 'Nelson Acosta', '2023-04-28 13:46:51', NULL);
 
 -- --------------------------------------------------------
 
@@ -63,8 +67,8 @@ CREATE TABLE `migrations` (
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(1, '2019_12_14_000001_create_personal_access_tokens_table', 1),
-(2, '2023_04_26_143147_create_equipos_table', 1);
+(3, '2019_12_14_000001_create_personal_access_tokens_table', 1),
+(4, '2023_04_26_143147_create_equipos_table', 1);
 
 -- --------------------------------------------------------
 
@@ -117,13 +121,13 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT de la tabla `equipos`
 --
 ALTER TABLE `equipos`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de la tabla `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `personal_access_tokens`
