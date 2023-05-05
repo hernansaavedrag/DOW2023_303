@@ -26,5 +26,6 @@ Route::get('/equipos',[EquipoController::class,'index'])->name('equipos.index');
 Route::post('/equipos',[EquipoController::class,'store'])->name('equipos.store');
 
 Route::get('/jugadores',[JugadoresController::class,'index'])->name('jugadores.index');
+Route::post('/jugadores',[JugadoresController::class,'store'])->name('jugadores.store');
 
 
