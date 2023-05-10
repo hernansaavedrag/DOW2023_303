@@ -32,7 +32,10 @@
                             <td class="align-middle">{{$jugador->nombre}}</td>
                             <td class="align-middle">{{$jugador->posicion}}</td>
                             <td class="align-middle">{{$jugador->numero}}</td>
-                            <td class="align-middle">{{$jugador->equipo->nombre}}</td>
+                            <td class="align-middle">
+                                {{$jugador->equipo!=null?$jugador->equipo->nombre:'Sin equipo'}}
+                                <!--condicion?valor_verdadero:valor_falso-->
+                            </td>
                             <td>
                                 <a href="#" class="btn btn-sm btn-danger pb-0" data-bs-toggle="tooltip"
                                     data-bs-title="Borrar {{$jugador->nombre}}">

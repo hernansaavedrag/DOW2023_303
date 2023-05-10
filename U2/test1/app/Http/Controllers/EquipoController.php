@@ -21,4 +21,10 @@ class EquipoController extends Controller
         return redirect()->route('equipos.index');
 
     }
+
+    public function destroy(Equipo $equipo){
+        //dd($equipo->nombre);
+        $equipo->delete();
+        return redirect()->route('equipos.index');
+    }
 }
