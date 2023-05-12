@@ -60,7 +60,7 @@
                 <div class="card">
                     <div class="card-header bg-dark text-white">Agregar Jugador</div>
                     <div class="card-body">
-                        <form method="POST" action="{{route('jugadores.store')}}">
+                        <form method="POST" action="{{route('jugadores.store')}}" enctype="multipart/form-data">
                             @csrf
                             <div class="mb-3">
                                 <label for="apellido" class="form-label">Apellido</label>
@@ -101,6 +101,10 @@
                                             @endforeach
 
                                         </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="imagen">Imagen:</label>
+                                        <input type="file" id="imagen" name="imagen" class="form-control-file">
                                     </div>
                                 </div>
                             </div>
