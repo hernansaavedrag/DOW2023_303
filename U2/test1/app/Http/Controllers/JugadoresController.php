@@ -26,4 +26,13 @@ class JugadoresController extends Controller
         return redirect()->route('jugadores.index');
 
     }
+
+    public function edit(Jugador $jugador){
+        $equipos = Equipo::all();
+        return view('jugadores.edit',compact('jugador','equipos'));
+    }
+
+    public function update(){
+
+    }
 }
