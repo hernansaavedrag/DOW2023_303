@@ -26,7 +26,7 @@
             <div class="card">
                 <div class="card-header">Formulario de edición</div>
                 <div class="card-body">
-                    <form method="POST" action="{{route('jugadores.update',$jugador->id)}}">
+                    <form method="POST" action="{{route('jugadores.update',$jugador->id)}}" enctype="multipart/form-data">
                         @csrf
                         @method('put')
                         <div class="mb-3">
@@ -69,12 +69,28 @@
 
                                     </select>
                                 </div>
+                                <div class="mt-2">
+                                    <div class="form-group" >
+                                        <label for="imagen">Imagen:</label>
+                                        <input type="file" id="imagen" name="imagen" class="form-control-file">
+                                    </div>
+                                </div>
+
                             </div>
+                        </div>
+                        <div class="mb-3 d-grid gap-2 d-lg-block">
+                            <button type="reset" class="btn btn-warning">Cancelar</button>
+                            <button type="submit" class="btn btn-success">Editar Jugador</button>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     <!-- /fomr edición -->
+    </div>
+    <div class="row">
+        <div class="col">
+            <a href="{{route('jugadores.index')}}" class="btn btn-info">Volver a Jugadores</a>
+        </div>
     </div>
 @endsection
