@@ -35,7 +35,7 @@
                         <small>Proporcione sus credenciales para ingresar al sistema</small>
                         <div class="card">
                             <div class="card-body">
-                                <form action="">
+                                <form method="POST" action="">
                                     <div class="mb-3">
                                         <label for="username" class="form-label">Nombre de Usuario</label>
                                         <input type="text" id="username" class="form-control">
