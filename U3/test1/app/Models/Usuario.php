@@ -14,7 +14,7 @@ class Usuario extends Authenticable
     protected $table = 'usuarios';
 
     public function registrarUltimoLogin(){
-        $this->ultimo_login = new DataTime('NOW');
+        $this->ultimo_login = new DateTime('NOW');
         $this->save();
     }
 

@@ -22,7 +22,7 @@
                 Último inicio de sesión 01/04/2023 a las 18:34
             </div>
             <div class="col-1 text-end d-none d-lg-block">
-                <a href="{{route('home.login')}}" class="text-white">Cerrar Sesión</a>
+                <a href="{{route('usuarios.logout')}}" class="text-white">Cerrar Sesión</a>
             </div>
         </div>
     </div>
@@ -75,7 +75,7 @@
                             </ul>
                         </li>
                         <li class="nav-item d-lg-none">
-                            <a class="nav-link" href="{{route('home.login')}}">Cerrar Sesión</a>
+                            <a class="nav-link" href="{{route('usuarios.logout')}}">Cerrar Sesión</a>
                         </li>
 
                     </ul>

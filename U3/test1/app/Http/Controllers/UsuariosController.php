@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Usuario;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UsuariosController extends Controller
 {
@@ -84,6 +85,23 @@ class UsuariosController extends Controller
     }
 
     public function login(Request $request){
-        
+        //dd($request->only('email','password'));
+        $credenciales = $request->only('email','password');
+
+        if (Auth::attempt($credenciales)){
+            //credenciales correctas
+            $usuario = Usuario::where('email',$request->email)->first();
+            $usuario->registrarUltimoLogin();
+            return redirect()->route('home.index');
+        }
+        else{
+            //credenciales incorrectas
+            return back()->withErrors('Credenciales Incorrectas');
+        }
+    }
+
+    public function logout(){
+        Auth::logout();
+        return redirect()->route('home.login');
     }
 }
