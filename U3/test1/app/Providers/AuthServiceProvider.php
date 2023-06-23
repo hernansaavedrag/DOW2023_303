@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-// use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
 class AuthServiceProvider extends ServiceProvider
@@ -25,6 +25,10 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        //GATES
+        Gate::define('usuarios-listar',function($usuario){
+            return $usuario->rol_Id == 1; 
+            //return $usuario->rol->nombre == 'Administrador' //eh aqui el dilema!!! 
+        });
     }
 }

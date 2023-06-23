@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Usuario;
+use App\Models\{Usuario,Rol};
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Gate;
 
 class UsuariosController extends Controller
 {
@@ -21,6 +22,12 @@ class UsuariosController extends Controller
     public function index()
     {
         //
+        if (Gate::denies('usuarios-listar')){
+            return redirect()->route('home.index');
+        }
+
+        $usuarios = Usuario::all();
+        return view('usuarios.index',compact('usuarios'));
     }
 
     /**

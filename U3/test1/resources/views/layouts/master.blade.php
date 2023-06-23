@@ -16,10 +16,10 @@
     <div class="container-fluid">
         <div class="row bg-dark text-white">
             <div class="col-8">
-                Bienvenido <span class="fw-bold">User1</span>
+                Bienvenido <span class="fw-bold">{{Auth::user()->nombre}}</span>
             </div>
             <div class="col-3 text-end d-none d-lg-block">
-                Último inicio de sesión 01/04/2023 a las 18:34
+                Último inicio de sesión {{date('d-m-Y',strtotime(Auth::user()->ultimo_login))}} a las {{date('H:i:s',strtotime(Auth::user()->ultimo_login))}}
             </div>
             <div class="col-1 text-end d-none d-lg-block">
                 <a href="{{route('usuarios.logout')}}" class="text-white">Cerrar Sesión</a>
@@ -42,10 +42,14 @@
                         <li class="nav-item">
                             <a class="nav-link @if(Route::current()->getName()=='home.index') active @endif" aria-current="page" href="{{route('home.index')}}">Inicio</a>
                         </li>
+
+                        @if (Gate::allows('usuarios-listar'))
                         <li class="nav-item">
                             <a class="nav-link @if(Route::current()->getName()=='equipos.index') active @endif" href="{{route('equipos.index')}}">Equipos</a>
                             {{--<a class="nav-link @if(Request::segments()[0]=='equipos') active @endif" href="{{route('equipos.index')}}">Equipos</a>--}}
                         </li>
+                        @endif
+
                         <li class="nav-item">
                             <a class="nav-link" href="#">Estadios</a>
                         </li>
